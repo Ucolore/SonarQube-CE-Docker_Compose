@@ -1,8 +1,8 @@
 version: "3"
 services:
   sonarqube:
-    image: sonarqube:community
-    hostname: localhost
+    image: 'sonarqube:community'
+    hostname: 'localhost'
     container_name: sonarqube
     depends_on:
       - db
@@ -11,19 +11,19 @@ services:
       SONAR_JDBC_USERNAME: sonar
       SONAR_JDBC_PASSWORD: sonar
     volumes:
-      - /srv/sonarqube/data:/opt/sonarqube/data
-      - /srv/sonarqube/extensions:/opt/sonarqube/extensions
-      - /srv/sonarqube/logs:/opt/sonarqube/logs
+      - '/srv/sonarqube/data:/opt/sonarqube/data'
+      - '/srv/sonarqube/extensions:/opt/sonarqube/extensions'
+      - '/srv/sonarqube/logs:/opt/sonarqube/logs'
     ports:
-      - "9000:9000"
+      - '9000:9000'
   db:
-    image: postgres:14.5-alpine
-    hostname: postgresql
+    image: 'postgres:14.5-alpine'
+    hostname: 'postgresql'
     container_name: postgresql
     environment:
       POSTGRES_USER: sonar
       POSTGRES_PASSWORD: sonar
       POSTGRES_DB: sonar
     volumes:
-      - /srv/sonarqube/postgresql:/var/lib/postgresql
-      - /srv/sonarqube/postgresql/data:/var/lib/postgresql/data
+      - '/srv/sonarqube/postgresql:/var/lib/postgresql'
+      - '/srv/sonarqube/postgresql/data:/var/lib/postgresql/data'
