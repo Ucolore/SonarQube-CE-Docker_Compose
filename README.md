@@ -8,6 +8,6 @@ It's a compose file that contains a pre-configuration of Self-managment Sonar Qu
 In the directory with compose file execute:
 - sudo docker compose up -d
 
-Our GitLab is available at defined base url, example: http://localhost:9000. 
+Our SonarQube is available at defined base url, example: http://localhost:9000. 
 
 ### ENJOY!!!
